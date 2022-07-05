@@ -18,12 +18,15 @@ function countdown(){
 
     // console.log(days,hours,minutes,seconds);
     
-    days_element.innerHTML = days;
-    hours_element.innerHTML = hours;
-    minutes_element.innerHTML = minutes;
-    seconds_element.innerHTML = seconds;
+    days_element.innerHTML = (days);
+    hours_element.innerHTML = formatTime(hours);
+    minutes_element.innerHTML = formatTime(minutes);
+    seconds_element.innerHTML = formatTime(seconds);
 
 }
 
+function formatTime(time){
+    return time < 10 ? `0${time}` : time;
+}
 countdown();
 setInterval(countdown,1000);
